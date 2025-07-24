@@ -1,0 +1,25 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_url: "https://gallery.isic-archive.com/" 
+  local_data_file: artifacts/data_ingestion/raw_images
+
+data_validation:
+  root_dir: artifacts/data_validation
+  STATUS_FILE: artifacts/data_validation/status.txt
+  unzip_data_dir: artifacts/data_ingestion/raw_images
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  train_path: artifacts/data_transformation/train
+  test_path: artifacts/data_transformation/test
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  trained_model_path: artifacts/model_trainer/model.h5
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  model_path: artifacts/model_trainer/model.h5
+  metric_file_name: artifacts/model_evaluation/metrics.json

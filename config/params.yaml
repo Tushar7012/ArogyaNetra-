@@ -1,0 +1,12 @@
+IMAGE_SIZE: [224, 224, 3]
+AUGMENTATION: True
+BATCH_SIZE: 16
+EPOCHS: 5
+INCLUDE_TOP: False
+LEARNING_RATE: 0.0001
+WEIGHTS: imagenet
+CLASSES: 
+  - melanoma
+  - benign_nevus
+AGENT_RESEARCHER_ROLE: 'Senior Image Research Analyst'
+AGENT_RESEARCHER_GOAL: 'Find all image source URLs from a given gallery page'
