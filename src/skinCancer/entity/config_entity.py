@@ -14,3 +14,11 @@ class DataIngestionConfig:
     root_dir: Path
     source_url: str
     local_data_file: Path
+
+
+@dataclass(frozen=True)
+class DataValidationConfig:
+    root_dir: Path
+    STATUS_FILE: str
+    all_schema: dict # Using 'dict' for flexibility with YAML schema
+    unzip_data_dir: Path

@@ -1,7 +1,7 @@
 from skinCancer.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 from pathlib import Path
 from skinCancer.utils.common import read_yaml, create_directories
-from skinCancer.entity.config_entity import DataIngestionConfig
+from skinCancer.entity.config_entity import DataIngestionConfig,DataValidationConfig
 
 class ConfigurationManager:
     """
@@ -35,3 +35,20 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+    
+    def get_data_validation_config(self) -> DataValidationConfig:
+        """
+        Reads the data_validation configuration and returns a DataValidationConfig object.
+        """
+        config = self.config.data_validation
+        schema = self.config.data_validation.all_schema
+
+        create_directories([config.root_dir])
+
+        data_validation_config = DataValidationConfig(
+            root_dir=Path(config.root_dir),
+            STATUS_FILE=config.STATUS_FILE,
+            all_schema=schema,
+            unzip_data_dir=Path(config.unzip_data_dir)
+        )
+        return data_validation_config
