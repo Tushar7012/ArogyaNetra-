@@ -1,0 +1,1 @@
+from skinCancer.logs.log import logger
