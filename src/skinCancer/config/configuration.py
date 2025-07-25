@@ -23,6 +23,7 @@ class ConfigurationManager:
         Reads the data_ingestion configuration from the main config file
         and returns a DataIngestionConfig object.
         """
+
         config = self.config.data_ingestion
 
         create_directories([config.root_dir])
